@@ -1,0 +1,70 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+  <a class="navbar-brand" href="${pageContext.request.contextPath}/auth/accueil"><img alt="logo ENI" src="${pageContext.request.contextPath}/images/logoENI.jpg" width="100px" height="100px"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+<div id="global">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    			<img alt="logo voiture" src="${pageContext.request.contextPath}/images/voiture.png" height="20px"> Voiture
+  			</button>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="${pageContext.request.contextPath}/auth/ajoutvehicule">Ajouter un véhciule</a>
+          <a class="dropdown-item" href="${pageContext.request.contextPath}/auth/listevehicule">Liste des véhicules</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="${pageContext.request.contextPath}/auth/ajoutindispo">Ajouter une indisponibilité</a>
+          <a class="dropdown-item" href="${pageContext.request.contextPath}/auth/gestionindispo">Liste des indisponibilités</a>
+        </div>
+      </li>
+            <li class="nav-item dropdown">
+  			<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    			<img alt="logo réservation" src="${pageContext.request.contextPath}/images/reservation.png" height="20px"> Reservation
+  			</button>
+  			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+			    <a class="dropdown-item" href="${pageContext.request.contextPath}/auth/ajoutreservation">Faire une réservation</a>
+		  </div>
+      </li>
+      <c:if test="${sessionScope.user_inc.role eq 'admin'}">
+      <li class="nav-item dropdown">
+  			<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    			<img alt="logo réservation" src="${pageContext.request.contextPath}/images/reservataire.png" height="20px"> Reservataire
+  			</button>
+  			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+			    <a class="dropdown-item" href="${pageContext.request.contextPath}/auth/ajoutreservataire">Ajouter un réservataire</a>
+			    <a class="dropdown-item" href="${pageContext.request.contextPath}/auth/listereservataire">Liste des réservataires</a>
+		  </div>
+      </li>
+      <li class="nav-item dropdown">
+  			<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    			<img alt="logo réservation" src="${pageContext.request.contextPath}/images/lieu.png" height="20px"> Lieux
+  			</button>
+  			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+			    <a class="dropdown-item" href="${pageContext.request.contextPath}/auth/ajoutlieu">Ajouter une destination</a>
+			    <a class="dropdown-item" href="${pageContext.request.contextPath}/auth/ajoutcampus">Ajouter un Campus</a>
+			    <div class="dropdown-divider"></div>
+			    <a class="dropdown-item" href="${pageContext.request.contextPath}/auth/listelieux">Liste des lieux</a>
+			    
+		  </div>
+      </li>
+            <li class="nav-item dropdown">
+  			<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    			<img alt="logo réservation" src="${pageContext.request.contextPath}/images/utilisateur.png" height="20px"> Utilisateur
+  			</button>
+  			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+			    <a class="dropdown-item" href="${pageContext.request.contextPath}/auth/ajoututilisateur">Ajouter un utilisateur</a>
+			    <a class="dropdown-item" href="${pageContext.request.contextPath}/auth/listeutilisateur">Liste des utilisateurs</a>
+			    
+		  </div>
+      </li>
+      </c:if>
+		<li class="nav-item">
+		<form method="get" action="${pageContext.request.contextPath}/deconnexion">
+		<button type="submit" class="btn btn-secondary"><img alt="logo réservation" src="${pageContext.request.contextPath}/images/deconnexion.png" height="20px"> Me déconnecter</button>
+		</form>
+      </li>
+    </ul>
+  </div>
+  </div>
+</nav>

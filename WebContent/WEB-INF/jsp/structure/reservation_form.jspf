@@ -1,0 +1,86 @@
+<div class="form-group row">
+		<label class="control-label col-sm-2" for="motif">Motif</label>
+		<input type="text" class="form-control col-sm-6" id="motif" name="motif" placeholder="" maxlength="50" value="${resa.motif}">
+	</div>
+	
+	<c:if test="${not empty erreurs.errors['motif']}">
+	<div class="alert alert-danger" role="alert">${erreurs.errors['motif']}</div>
+	</c:if>
+	
+	<div class="form-group row">
+		<label class="control-label col-sm-2" for="dateDebut">Date de début</label>
+		<input type="datetime-local" class="form-control col-sm-6" id="dateDebut" name="dateDebut" placeholder="" value="${resa.dateDebut}" onchange="validerDispo()">
+	</div>
+	
+	<c:if test="${not empty erreurs.errors['dateDebut']}">
+	<div class="alert alert-danger" role="alert">${erreurs.errors['dateDebut']}</div>
+	</c:if>
+	
+	<div class="form-group row">
+		<label class="control-label col-sm-2" for="dateFin">Date de fin</label>
+		<input type="datetime-local" class="form-control col-sm-6" id="dateFin" name="dateFin" placeholder="" value="${resa.dateFin}" onchange="validerDispo()">
+	</div>
+	
+	<c:if test="${not empty erreurs.errors['dateFin']}">
+	<div class="alert alert-danger" role="alert">${erreurs.errors['dateFin']}</div>
+	</c:if>
+	<c:if test="${not empty erreurs.errors['date']}">
+	<div class="alert alert-danger" role="alert">${erreurs.errors['date']}</div>
+	</c:if>
+	<c:if test="${not empty erreurs.errors['chevauchement']}">
+	<div class="alert alert-danger" role="alert">${erreurs.errors['chevauchement']}</div>
+	</c:if>
+	
+	<div class="form-group row">
+		<label class="control-label col-sm-2" for="commentaire">Commentaire</label>
+		<input type="text" class="form-control col-sm-6" id="commentaire" name="commentaire" placeholder="" maxlength="200" value="${resa.commentaire}">
+	</div>
+	
+	<c:if test="${not empty erreurs.errors['commentaire']}">
+	<div class="alert alert-danger" role="alert">${erreurs.errors['commentaire']}</div>
+	</c:if>
+	
+	<div id="immat" class="form-group row">
+		<label class="control-label col-sm-2" for="immatriculation">Vehicule</label>
+		<select class="form-control col-sm-6" id="immatriculation" name="immatriculation" onchange="validerImmat()">
+		<c:forEach items="${ vehicules }" var="vehicule">
+		 		<option value="${vehicule.immatriculation}"  <c:if test="${resa.vehicule.immatriculation eq vehicule.immatriculation}" >selected="selected"</c:if> >${vehicule.immatriculation} ${vehicule.description}</option>
+		 	</c:forEach>
+		</select>
+	</div>
+	
+	<c:if test="${not empty erreurs.errors['immatriculation']}">
+	<div class="alert alert-danger" role="alert">${erreurs.errors['immatriculation']}</div>
+	</c:if>
+	
+	<div class="form-group row">
+		<label class="control-label col-sm-2" for="lieu">Destination</label>
+		<select class="form-control col-sm-6" id="lieu" name="lieu">
+		<c:forEach items="${ lieux }" var="lieu">
+		 		<option value="${lieu.id}"  <c:if test="${resa.lieu.id eq lieu.id}" >selected="selected"</c:if> >${lieu.intitule}</option>
+		 	</c:forEach>
+		</select>
+	</div>
+	
+	<c:if test="${not empty erreurs.errors['lieu']}">
+	<div class="alert alert-danger" role="alert">${erreurs.errors['lieu']}</div>
+	</c:if>
+
+	<div id="reservataire" class="form-group">
+		<label class="paddingnull control-label col-sm-2" for="reservataire">Reservataire</label>
+			<c:forEach var="i" begin="0" end="${resa.vehicule.nombrePlace}" step="1">
+	    		<select class="form-control col-sm-6" id="reservataire${i }" name="reservataire${i }">
+	    			<option value="rien"></option>
+					<c:forEach items="${ reservataires }" var="reservataire">
+				 		<option value="${reservataire.id}"  <c:if test="${resa.reservataires[i].id eq reservataire.id}" >selected="selected"</c:if> >${reservataire.nom} ${reservataire.prenom}</option>
+				 	</c:forEach>
+				</select>
+			</c:forEach>
+	</div>
+	<c:if test="${not empty erreurs.errors['reservataire']}">
+	<div class="alert alert-danger" role="alert">${erreurs.errors['reservataire']}</div>
+	</c:if>
+	
+	
+	
+	

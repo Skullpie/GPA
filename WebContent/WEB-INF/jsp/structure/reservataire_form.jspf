@@ -1,0 +1,96 @@
+
+	<input type="hidden" id="id" name="id" value="${res.id }">
+	<c:if test="${not empty erreurs.errors['id']}">
+		<div class="alert alert-danger" role="alert">${erreurs.errors['id']}</div>
+	</c:if>
+	
+	<div class="form-group row">
+		<label for="nom" class="control-label col-sm-2">Nom</label>
+		<div class="col-sm-6">
+		<input type="text" class="form-control" id="nom" name="nom" placeholder="nom" maxlength="50" required value="${res.nom}">
+		</div>
+	</div>
+	
+	<c:if test="${not empty erreurs.errors['nom']}">
+		<div class="alert alert-danger" role="alert">${erreurs.errors['nom']}</div>
+	</c:if>
+	
+	<div class="form-group row">
+		<label for="prenom" class="control-label col-sm-2">Prénom</label>
+		<div class="col-sm-6">
+		<input type="text" class="form-control" id="prenom" name="prenom" placeholder="prenom" maxlength="50" required value="${res.prenom}">
+		</div>
+	</div>
+	
+	<c:if test="${not empty erreurs.errors['prenom']}">
+		<div class="alert alert-danger" role="alert">${erreurs.errors['prenom']}</div>
+	</c:if>
+	
+	<div class="form-group row">
+		<label for="email" class="control-label col-sm-2">Email</label>
+		<div class="col-sm-6">
+		<input type="email" class="form-control" id="email" name="email" placeholder="email" maxlength="50" required value="${res.email}">
+		</div>
+	</div>
+	
+	<c:if test="${not empty erreurs.errors['email']}">
+		<div class="alert alert-danger" role="alert">${erreurs.errors['email']}</div>
+	</c:if>
+	
+	<div class="form-group row">
+		<label for="telephone" class="control-label col-sm-2">Téléphone</label>
+		<div class="col-sm-6">
+		<input type="text" class="form-control" id="telephone" name="telephone" placeholder="0549010203" maxlength="50" required value="${res.telephone}">
+		</div>
+	</div>
+	
+	<c:if test="${not empty erreurs.errors['telephone']}">
+		<div class="alert alert-danger" role="alert">${erreurs.errors['telephone']}</div>
+	</c:if>
+	
+	<div class="form-group row">
+		<label for="rue" class="control-label col-sm-2">Rue</label>
+		<div class="col-sm-6">
+		<input type="text" class="form-control" id="rue" name="rue" placeholder="" maxlength="50" value="${res.rue}">
+		</div>
+	</div>
+	
+	<c:if test="${not empty erreurs.errors['rue']}">
+		<div class="alert alert-danger" role="alert">${erreurs.errors['rue']}</div>
+	</c:if>
+	
+		<div class="form-group row">
+		<label for="codePostal" class="control-label col-sm-2">Code Postal</label>
+		<div class="col-sm-6">
+		<input type="text" class="form-control" id="codePostal" name="codePostal" placeholder="44000" maxlength="50" value="${res.codePostal}">
+		</div>
+	</div>
+	
+	<c:if test="${not empty erreurs.errors['codePostal']}">
+		<div class="alert alert-danger" role="alert">${erreurs.errors['codePostal']}</div>
+	</c:if>
+	
+	<div class="form-group row">
+		<label for="ville" class="control-label col-sm-2">Ville</label>
+		<div class="col-sm-6">
+		<input type="text" class="form-control" id="ville" name="ville" placeholder="Nantes" maxlength="50" value="${res.ville}">
+		</div>
+	</div>
+	
+	<c:if test="${not empty erreurs.errors['ville']}">
+		<div class="alert alert-danger" role="alert">${erreurs.errors['ville']}</div>
+	</c:if>
+	
+	<div class="form-group row">
+		<label for="idLieu" class="control-label col-sm-2">Campus de ratachement</label>
+		<div class="col-sm-6">
+		<select id="idLieu" name="idLieu" class="form-control">
+		<c:forEach items="${ lieux }" var="lieu">
+		 		<option value="${lieu.id}"  <c:if test="${res.lieu.intitule eq lieu.intitule}" >selected="selected"</c:if> >${lieu.intitule}</option>
+		 	</c:forEach>
+		</select>
+		</div>
+	</div>
+	<c:if test="${not empty erreurs.errors['idLieu']}">
+		<div class="alert alert-danger" role="alert">${erreurs.errors['idLieu']}</div>
+	</c:if>

@@ -1,0 +1,53 @@
+
+	<input type="hidden" id="id" name="id" value="${utilisateur.id }">
+	<c:if test="${not empty erreurs.errors['id']}">
+		<div class="alert alert-danger" role="alert">${erreurs.errors['id']}</div>
+	</c:if>
+	
+	<div class="form-group row">
+		<label for="pseudo" class="control-label col-sm-2">Pseudo</label>
+		<div class="col-sm-6">
+		<input type="text" class="form-control" id="pseudo" name="pseudo" placeholder="pseudo" maxlength="20" required value="${utilisateur.pseudo}">
+		</div>
+	</div>
+
+	<c:if test="${not empty erreurs.errors['pseudo']}">
+		<div class="alert alert-danger" role="alert">${erreurs.errors['pseudo']}</div>
+	</c:if>
+
+	<div class="form-group row">
+		<label for="email" class="control-label col-sm-2">Email</label>
+		<div class="col-sm-6">
+		<input type="email" class="form-control" id="email" name="email" placeholder="email" maxlength="50" required value="${utilisateur.email}">
+		</div>
+	</div>
+	
+	<c:if test="${not empty erreurs.errors['email']}">
+		<div class="alert alert-danger" role="alert">${erreurs.errors['email']}</div>
+	</c:if>
+	
+
+	
+	<div class="form-group row">
+		<label for="motDePasse" class="control-label col-sm-2">Mot de passe</label>
+		<div class="col-sm-6">
+		<input type="password" class="form-control" id="motDePasse" name="motDePasse" placeholder="mot de passe" maxlength="50" required value="${utilisateur.motDePasse}">
+		</div>
+	</div>
+	
+	<c:if test="${not empty erreurs.errors['motDePasse']}">
+		<div class="alert alert-danger" role="alert">${erreurs.errors['motDePasse']}</div>
+	</c:if>
+	
+	<div class="form-group row">
+		<label for="role" class="control-label col-sm-2">Rôle</label>
+		<div class="col-sm-6">
+		<select id="role" name="role" class="form-control">
+			<option value="user"  <c:if test="${utilisateur.role eq 'user'}" >selected="selected"</c:if> >Utilisateur</option> 
+			<option value="admin"  <c:if test="${utilisateur.role eq 'admin'}" >selected="selected"</c:if> >Administrateur</option> 
+		</select>
+		</div>
+	</div>
+	<c:if test="${not empty erreurs.errors['role']}">
+		<div class="alert alert-danger" role="alert">${erreurs.errors['role']}</div>
+	</c:if>

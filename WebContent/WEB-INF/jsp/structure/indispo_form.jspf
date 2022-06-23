@@ -1,0 +1,55 @@
+	<input type="hidden" id="id" name="id" value="${indispo.idIndisponibilite }">
+	<c:if test="${not empty erreurs.errors['id']}">
+		<div class="alert alert-danger" role="alert">${erreurs.errors['id']}</div>
+	</c:if>
+	
+<div class="form-group row">
+		<label class="control-label col-sm-2" for="idMotif">Motif</label>
+		<select id="idMotif" name="idMotif" class="form-control col-sm-6">
+		<c:forEach items="${ motifs }" var="motif">
+		 		<option value="${motif.id}"  <c:if test="${indispo.motifIndisponibilite.intitule eq motif.intitule}" >selected="selected"</c:if> >${motif.intitule}</option>
+		 	</c:forEach>
+		</select>
+	</div>
+	
+	<c:if test="${not empty erreurs.errors['idMotif']}">
+	<div class="alert alert-danger" role="alert">${erreurs.errors['idMotif']}</div>
+	</c:if>
+	
+	<div class="form-group row">
+		<label class="control-label col-sm-2" for="dateDebut">Date de début</label>
+		<input type="datetime-local" class="form-control col-sm-6" id="dateDebut" name="dateDebut" placeholder="" value="${indispo.dateDebut}">
+	</div>
+	
+	<c:if test="${not empty erreurs.errors['idMotif']}">
+	<div class="alert alert-danger" role="alert">${erreurs.errors['dateDebut']}</div>
+	</c:if>
+	
+	<div class="form-group row">
+		<label class="control-label col-sm-2" for="dateFin">Date de fin</label>
+		<input type="datetime-local" class="form-control col-sm-6" id="dateFin" name="dateFin" placeholder="" value="${indispo.dateFin}">
+	</div>
+	
+	<c:if test="${not empty erreurs.errors['dateFin']}">
+		<div class="alert alert-danger" role="alert">${erreurs.errors['dateFin']}</div>
+	</c:if>
+	<c:if test="${not empty erreurs.errors['compareDate']}">
+		<div class="alert alert-danger" role="alert">${erreurs.errors['compareDate']}</div>
+	</c:if>
+	<c:if test="${not empty erreurs.errors['chevauchement']}">
+		<div class="alert alert-danger" role="alert">${erreurs.errors['chevauchement']}</div>
+	</c:if>
+	
+	<div class="form-group row">
+		<label class="control-label col-sm-2" for="immatriculation">Vehicule</label>
+		<select id="immatriculation" name="immatriculation" class="form-control col-sm-6">
+		<c:forEach items="${ vehicules }" var="vehicule">
+		 		<option value="${vehicule.immatriculation}"  <c:if test="${indispo.vehicule.immatriculation eq vehicule.immatriculation}" >selected="selected"</c:if> >${vehicule.immatriculation} ${vehicule.description}</option>
+		 	</c:forEach>
+		</select>
+	</div>
+	    
+
+	<c:if test="${not empty erreurs.errors['vehicule']}">
+		<div class="alert alert-danger" role="alert">${erreurs.errors['vehicule']}</div>
+	</c:if>

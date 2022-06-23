@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+
+  body {
+    margin: 40px 10px;
+    padding: 0;
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+    font-size: 14px;
+    background-color: #7F9AB7;
+  }
+
+  #calendar {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .centrernav{
+ 
+   padding-left: 32%;
+  }
+  .btn-secondary {
+    color: #fff;
+    background-color: #134A80;
+    border-color: #6c757d;
+}
+.persoform{
+	margin-top:30px;
+	background-color: #134A80;
+	padding: 5px;
+	color: #7F9AB7;
+}
+.centrageform{
+margin-left: 40%;
+}
+.ajusth1{
+	margin-bottom: 30px;
+}
+.ajusth1bis{
+	margin-bottom: 30px;
+	color: #134A80;
+}
+.centrage {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  }
+ .paddingnull{
+ padding-left: 0;
+ }
+ .alignebouton{
+ position: relative; 
+ float: right;
+ }
+#global {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%; /* largeur obligatoire pour être centré */
+}

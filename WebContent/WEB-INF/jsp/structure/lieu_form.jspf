@@ -1,0 +1,84 @@
+		<input type="hidden" id="id" name="id" value="${lieu.id }">
+	<c:if test="${not empty erreurs.errors['id']}">
+		<div class="alert alert-danger" role="alert">${erreurs.errors['id']}</div>
+	</c:if>
+	
+	<div class="form-group row">
+		<label for="intitule" class="control-label col-sm-2">Intitule</label>
+		<div class="col-sm-6">
+		<input type="text" class="form-control" id="intitule" name="intitule" placeholder="" maxlength="50" required value="${lieu.intitule}">
+		</div>
+	</div>
+	
+	<c:if test="${not empty erreurs.errors['intitule']}">
+	<div class="alert alert-danger" role="alert">${erreurs.errors['intitule']}</div>
+	</c:if>
+	
+		<div class="form-group row">
+		<label for="rue" class="control-label col-sm-2">Rue</label>
+		<div class="col-sm-6">
+		<input type="text" class="form-control" id="rue" name="rue" placeholder="" maxlength="50" required value="${lieu.rue}">
+		</div>
+	</div>
+	
+	<c:if test="${not empty erreurs.errors['rue']}">
+	<div class="alert alert-danger" role="alert">${erreurs.errors['rue']}</div>
+	</c:if>
+	
+		<div class="form-group row">
+		<label for="codePostal" class="control-label col-sm-2">Code Postal</label>
+		<div class="col-sm-6">
+		<input type="text" class="form-control" id="codePostal" name="codePostal" placeholder="44000" maxlength="5" required value="${lieu.codePostal}">
+		</div>
+	</div>
+	
+	<c:if test="${not empty erreurs.errors['codePostal']}">
+	<div class="alert alert-danger" role="alert">${erreurs.errors['codePostal']}</div>
+	</c:if>
+	
+		<div class="form-group row">
+		<label for="ville" class="control-label col-sm-2">Ville</label>
+		<div class="col-sm-6">
+		<input type="text" class="form-control" id="ville" name="ville" placeholder="Nantes" maxlength="50" required value="${lieu.ville}">
+		</div>
+	</div>
+	
+	<c:if test="${not empty erreurs.errors['ville']}">
+	<div class="alert alert-danger" role="alert">${erreurs.errors['ville']}</div>
+	</c:if>
+	
+		<div class="form-group row">
+		<label for="informationComplementaire" class="control-label col-sm-2">Information Complementaire</label>
+		<div class="col-sm-6">
+		<input type="text" class="form-control" id="informationComplementaire" name="informationComplementaire" placeholder="" maxlength="200" value="${lieu.informationComplementaire}">
+		</div>
+	</div>
+	
+	<c:if test="${not empty erreurs.errors['informationComplementaire']}">
+	<div class="alert alert-danger" role="alert">${erreurs.errors['informationComplementaire']}</div>
+	</c:if>
+	
+			<div class="form-group row">
+		<label for="latitude" class="control-label col-sm-2">Latitude</label>
+		<div class="col-sm-6">
+		<input type="text" class="form-control" id="latitude" name="latitude" placeholder="" maxlength="50" value="${lieu.latitude}">
+		</div>
+	</div>
+	
+	<c:if test="${not empty erreurs.errors['latitude']}">
+	<div class="alert alert-danger" role="alert">${erreurs.errors['latitude']}</div>
+	</c:if>
+	
+			<div class="form-group row">
+		<label for="longitude" class="control-label col-sm-2">Longitude</label>
+		<div class="col-sm-6">
+		<input type="text" class="form-control" id="longitude" name="longitude" placeholder="" maxlength="50" value="${lieu.longitude}">
+		</div>
+	</div>
+	
+	<c:if test="${not empty erreurs.errors['longitude']}">
+	<div class="alert alert-danger" role="alert">${erreurs.errors['longitude']}</div>
+	</c:if>
+	
+	
+	

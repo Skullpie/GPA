@@ -1,0 +1,13 @@
+<c:if test="${!empty requestScope.errors}">
+	<div class="d-flex alert-danger">
+		<div class="col-3 p-2">
+			<img src="${pageContext.request.contextPath}/images/error.png" width="20px" height="20px">
+		</div>
+	
+	    <ul class="col-9 list-unstyled p-2">
+			<c:forEach var="error" items="${requestScope.errors}">
+				<li>${error}</li>
+			</c:forEach>
+        </ul>
+	</div>
+</c:if>
