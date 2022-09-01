@@ -1,0 +1,102 @@
+@charset "UTF-8";
+
+@import 'navbar.css';
+@import 'forms.css';
+@import 'lists.css';
+
+:root {
+	/* Containers */
+	--main_bg_color: #7F9Ab7;
+	--container_bg_color: #134A80;
+	
+	/* Text */
+	--main_text_color_black: #111;
+	--main_text_color_darkgrey: darkgrey;
+	--main_text_color_lightgrey: lightgrey;
+	--main_text_color_light: #FDFDFD;
+	--main_text_color_accent: #1A64AC;
+	--default_font_family: Arial, Helvetica Neue, Helvetica, sans-serif;
+	--default_font_size: 14px;
+}
+
+body {
+	background-image: url(../../../gpa/images/bg.png);
+	margin: 0;
+	padding: 0 0 8em 0;
+	min-height: 100vh;
+	color: var(--main_text_color_dark);
+	font-family: var(--default_font);
+	font-size: var(--default_font_size);
+	background-color: var(--main_bg_color);
+	background-size: cover;
+}
+
+body > div {
+	background-color: #FFF;
+	border-radius: 10px;
+	box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+	padding: 25px !important;
+}
+
+.container {
+	width: max-content;
+	margin-bottom: 2em;
+}
+
+#calendar {
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+.centrernav {
+	padding-left: 32%;
+}
+
+.btn-secondary {
+	color: #fff;
+	background-color: var(--container_bg_color);
+	border-color: rgba(0,0,0,0.2);
+}
+
+.centrageform {
+	margin-left: 40%;
+}
+
+
+.centrage {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.paddingnull {
+	padding-left: 0;
+}
+
+.alignebouton {
+	position: relative; 
+	float: right;
+}
+
+
+div.immatriculation {
+	border: 2px solid black;
+	padding: 2px;
+	font-family: courrier;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
